@@ -1,0 +1,47 @@
+{% extends 'hesta_blog/layouts/master.html' %}
+
+{% block styles %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/authentication/css/register.css' %}">
+{% endblock %}
+
+{% block navbar %}
+    {% include 'hesta_blog/layouts/navbar.html' %}
+{% endblock %}
+
+{% block content %}
+    <div class="sidenav">
+     <div class="login-main-text">
+        <h2>Login or register</h2>
+         <p>For get more content</p>
+     </div>
+  </div>
+  <div class="main">
+     <div class="col-md-6 col-sm-12">
+        <div class="login-form">
+            <div class="alert"></div>
+            <form>
+              <div class="form-group">
+                 <label>User Name</label>
+                 <input type="text" class="form-control" placeholder="User Name" name="username" id="username">
+              </div>
+                <div class="form-group">
+                 <label>Email</label>
+                 <input type="email" class="form-control" placeholder="Email" name="email" id="email">
+              </div>
+              <div class="form-group">
+                 <label>Password</label>
+                 <input type="password" class="form-control" placeholder="Password" name="password" id="password">
+              </div>
+              <button type="button" class="btn btn-primary" onclick="register(username.value, email.value, password.value)">Register</button>
+              <a href="{% url 'login' %}" class="btn btn-secondary">Login</a>
+            </form>
+        </div>
+     </div>
+  </div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static '/authentication/js/register.js' %}"></script>
+{% endblock %}
+
